@@ -20,6 +20,7 @@ public class ListController {
 
     public ListController () {
         columnChoices.put("core competency", "Skill");
+        columnChoices.put("name", "Name");
         columnChoices.put("employer", "Employer");
         columnChoices.put("location", "Location");
         columnChoices.put("position type", "Position Type");
@@ -40,6 +41,7 @@ public class ListController {
         if (column.equals("all")) {
             ArrayList<HashMap<String, String>> jobs = JobData.findAll();
             model.addAttribute("title", "All Jobs");
+            model.addAttribute("column", column);
             model.addAttribute("jobs", jobs);
             return "list-jobs";
         } else {
@@ -49,7 +51,6 @@ public class ListController {
             model.addAttribute("items", items);
             return "list-column";
         }
-
     }
 
     @RequestMapping(value = "jobs")

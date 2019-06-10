@@ -59,15 +59,15 @@ public class JobData {
         return new ArrayList<>(allJobs);
     }
 
-    /**
-     * Returns results of search the jobs data by key/value, using
-     * inclusion of the search term.
+    /** relating to findByColumnAndValue
+     * Returns results of the search of JobsData instance by a key/value pair
+     * where the key is the column name and the value is the row data.
      *
      * For example, searching for employer "Enterprise" will include results
      * with "Enterprise Holdings, Inc".
      *
      * @param column   Column that should be searched.
-     * @param value Value of teh field to search for
+     * @param value Value of the field to search for
      * @return List of all jobs matching the criteria
      */
     public static ArrayList<HashMap<String, String>> findByColumnAndValue(String column, String value) {

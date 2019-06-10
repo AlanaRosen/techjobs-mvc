@@ -27,5 +27,16 @@
         </div>
     </div>
 
+    <div th:fragment="job-listing" >
+    <div th:each="jobMap : ${jobs}" >
+        <table class="job-listing">
+            <tr th:each="job : ${jobMap}">
+                <td th:text="${column.get(job.key)}"></td>
+                <td th:text="${job.value}"></td>
+            </tr>
+        </table>
+    </div>
+    </div>
+
 </body>
 </html>
